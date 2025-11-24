@@ -33,7 +33,7 @@ public class ServidorMazmorras {
 
     public static void main(String[] args) {
 
-        ExecutorService gmBots = Executors.newFixedThreadPool(3); // Creamos un pool de 3
+        ExecutorService gmBots = Executors.newFixedThreadPool(1); // Creamos un pool de 3
 
         // Simulamos 10 jugadores que quieren entrar a mazmorras
         String[] jugadores = {
