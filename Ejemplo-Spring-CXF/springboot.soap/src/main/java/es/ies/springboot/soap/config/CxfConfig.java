@@ -13,6 +13,8 @@ public class CxfConfig {
 
     private final Bus bus;
 
+    private final TareaSoapService TareaSoapService;
+
     public CxfConfig(Bus bus) {
         this.bus = bus;
     }
