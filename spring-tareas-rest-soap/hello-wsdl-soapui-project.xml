@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f98df8ea-81ff-4f25-836f-a53403f83ef3" activeEnvironment="Default" name="hello?wsdl" resourceRoot="" soapui-version="5.8.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="a5c0c0b3-2ad6-4dee-a22b-0775c24df578" wsaVersion="NONE" name="TareaServiceSoapBinding" type="wsdl" bindingName="{http://ies.puerto.es/ws/tarea}TareaServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/services/tareas?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/services/tareas?wsdl"><con:part><con:url>http://localhost:8080/services/tareas?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="TareaService" targetNamespace="http://ies.puerto.es/ws/tarea" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ies.puerto.es/ws/tarea" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://ies.puerto.es/ws/tarea" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="actualizar" type="tns:actualizar"/>
+      <xs:element name="actualizarResponse" type="tns:actualizarResponse"/>
+      <xs:element name="buscar" type="tns:buscar"/>
+      <xs:element name="buscarResponse" type="tns:buscarResponse"/>
+      <xs:element name="crear" type="tns:crear"/>
+      <xs:element name="crearResponse" type="tns:crearResponse"/>
+      <xs:element name="eliminar" type="tns:eliminar"/>
+      <xs:element name="eliminarResponse" type="tns:eliminarResponse"/>
+      <xs:element name="listarAll" type="tns:listarAll"/>
+      <xs:element name="listarAllResponse" type="tns:listarAllResponse"/>
+      <xs:element name="tarea" type="tns:tarea"/>
+      <xs:complexType name="crear">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="crearResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:tarea"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tarea">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" type="xs:long"/>
+          <xs:element minOccurs="0" name="titulo" type="xs:string"/>
+          <xs:element minOccurs="0" name="descripcion" type="xs:string"/>
+          <xs:element name="completada" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="listarAll">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="listarAllResponse">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:tarea"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="actualizar">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg2" type="xs:string"/>
+          <xs:element minOccurs="0" name="arg3" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="actualizarResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:tarea"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="buscar">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="identificador" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="buscarResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:tarea"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="eliminar">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="eliminarResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="crearResponse">
+    <wsdl:part element="tns:crearResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="crear">
+    <wsdl:part element="tns:crear" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listarAllResponse">
+    <wsdl:part element="tns:listarAllResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="eliminarResponse">
+    <wsdl:part element="tns:eliminarResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscarResponse">
+    <wsdl:part element="tns:buscarResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="actualizarResponse">
+    <wsdl:part element="tns:actualizarResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listarAll">
+    <wsdl:part element="tns:listarAll" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="actualizar">
+    <wsdl:part element="tns:actualizar" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="buscar">
+    <wsdl:part element="tns:buscar" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="eliminar">
+    <wsdl:part element="tns:eliminar" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TareaPortType">
+    <wsdl:operation name="crear">
+      <wsdl:input message="tns:crear" name="crear"></wsdl:input>
+      <wsdl:output message="tns:crearResponse" name="crearResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarAll">
+      <wsdl:input message="tns:listarAll" name="listarAll"></wsdl:input>
+      <wsdl:output message="tns:listarAllResponse" name="listarAllResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar">
+      <wsdl:input message="tns:actualizar" name="actualizar"></wsdl:input>
+      <wsdl:output message="tns:actualizarResponse" name="actualizarResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscar">
+      <wsdl:input message="tns:buscar" name="buscar"></wsdl:input>
+      <wsdl:output message="tns:buscarResponse" name="buscarResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminar">
+      <wsdl:input message="tns:eliminar" name="eliminar"></wsdl:input>
+      <wsdl:output message="tns:eliminarResponse" name="eliminarResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TareaServiceSoapBinding" type="tns:TareaPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="crear">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="crear">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="crearResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarAll">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="listarAll">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listarAllResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="actualizar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="actualizarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buscar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="buscar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="buscarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="eliminar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="eliminarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TareaService">
+    <wsdl:port binding="tns:TareaServiceSoapBinding" name="TareaPort">
+      <soap:address location="http://localhost:8080/services/tareas"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/services/tareas</con:endpoint></con:endpoints><con:operation id="37f48c9a-4a3b-4cd3-8467-acce1aa87849" isOneWay="false" action="" name="actualizar" bindingOperationName="actualizar" type="Request-Response" outputName="actualizarResponse" inputName="actualizar" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ae1a3873-9644-4577-8152-9a3ed58eceb4" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/tareas</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tar="http://ies.puerto.es/ws/tarea">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tar:actualizar>
+         <!--Optional:-->
+         <arg0>?</arg0>
+         <!--Optional:-->
+         <arg1>?</arg1>
+         <!--Optional:-->
+         <arg2>?</arg2>
+         <!--Optional:-->
+         <arg3>?</arg3>
+      </tar:actualizar>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ies.puerto.es/ws/tarea/TareaPortType/actualizar"/></con:call></con:operation><con:operation id="9ebd0486-68cc-4a2c-a06c-b129c9ba8b61" isOneWay="false" action="" name="buscar" bindingOperationName="buscar" type="Request-Response" outputName="buscarResponse" inputName="buscar" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="976dc888-0106-484a-9652-249051538f94" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/tareas</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tar="http://ies.puerto.es/ws/tarea">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tar:buscar>
+         <!--Optional:-->
+         <identificador>?</identificador>
+      </tar:buscar>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ies.puerto.es/ws/tarea/TareaPortType/buscar"/></con:call></con:operation><con:operation id="1d8bf4cd-38c2-4e9d-b06f-37cdfbe1dba9" isOneWay="false" action="" name="crear" bindingOperationName="crear" type="Request-Response" outputName="crearResponse" inputName="crear" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cd431c86-4db5-4dc6-9cad-9ceef21be9dc" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/tareas</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tar="http://ies.puerto.es/ws/tarea">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tar:crear>
+         <!--Optional:-->
+         <arg0>?</arg0>
+         <!--Optional:-->
+         <arg1>?</arg1>
+      </tar:crear>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ies.puerto.es/ws/tarea/TareaPortType/crear"/></con:call></con:operation><con:operation id="76d44601-96de-48c0-be27-69ec3bb97857" isOneWay="false" action="" name="eliminar" bindingOperationName="eliminar" type="Request-Response" outputName="eliminarResponse" inputName="eliminar" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="eddb9724-1b0f-4c36-850f-498369300c46" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/tareas</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tar="http://ies.puerto.es/ws/tarea">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tar:eliminar>
+         <!--Optional:-->
+         <arg0>?</arg0>
+      </tar:eliminar>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ies.puerto.es/ws/tarea/TareaPortType/eliminar"/></con:call></con:operation><con:operation id="7c6f075c-2d9b-4d28-9dff-582d011b0c95" isOneWay="false" action="" name="listarAll" bindingOperationName="listarAll" type="Request-Response" outputName="listarAllResponse" inputName="listarAll" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b89c83ae-aa70-4ebe-9248-20b345bf0282" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/tareas</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tar="http://ies.puerto.es/ws/tarea">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tar:listarAll/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://ies.puerto.es/ws/tarea/TareaPortType/listarAll"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
