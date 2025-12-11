@@ -2,6 +2,8 @@ package com.docencia.tareas.soap;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.docencia.tareas.model.Alumno;
 import com.docencia.tareas.service.IAlumnoService;
 
@@ -18,6 +20,7 @@ import jakarta.jws.WebService;
     endpointInterface = "com.docencia.tareas.soap.IAlumnoSoapEndPoint"
 )
 
+@Service
 public class AlumnoSoapService implements IAlumnoSoapEndPoint{
 
 
