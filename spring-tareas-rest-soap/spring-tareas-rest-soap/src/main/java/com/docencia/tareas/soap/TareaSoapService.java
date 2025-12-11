@@ -18,7 +18,7 @@ import jakarta.jws.WebService;
 )
 
 @Service
-public class TareaSoapService implements ITareaSoapEndpoint{
+public class TareaSoapService implements ITareaSoapEndPoint{
 
     private final ITareaService tareaService;
 

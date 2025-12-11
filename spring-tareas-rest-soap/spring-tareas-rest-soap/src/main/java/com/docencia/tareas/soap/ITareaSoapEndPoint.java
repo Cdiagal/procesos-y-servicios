@@ -13,7 +13,7 @@ import jakarta.jws.WebService;
         name = "TareaPortType"
     )
 
-public interface ITareaSoapEndpoint {
+public interface ITareaSoapEndPoint {
 
     @WebMethod(
         operationName = "listarAll"
